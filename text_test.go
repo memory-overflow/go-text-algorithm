@@ -33,3 +33,24 @@ func TestSliceSmae(t *testing.T) {
 	// test can not change order of a
 	t.Log(a)
 }
+
+func TestKmp(t *testing.T) {
+	k := textalg.BuildKmp("a")
+	indexs := k.Search("aaaaab") // find "a" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("a")
+	indexs = k.Search("aaaaab") // find "aa" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("a")
+	indexs = k.Search("aaaaab") // find "aaa" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("b")
+	indexs = k.Search("aaaaab") // find "aaab" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("b")
+	indexs = k.Search("aaaaab") // find "aaabb" in "aaaaab"
+	t.Log(indexs)
+	k.ResetPatternStr("ab")
+	indexs = k.Search("aaaaab") // find "ab" in "aaaaab"
+	t.Log(indexs)
+}
