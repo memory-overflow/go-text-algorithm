@@ -17,7 +17,7 @@ example: [TestSliceSmae](https://github.com/memory-overflow/go-text-algorithm/bl
 import (
   "testing"
 
-  "github.com/memory-overflow/go-common-library/text"
+  "github.com/memory-overflow/go-text-algorithm"
 )
 
 func TestSliceSmae(t *testing.T) {
@@ -41,7 +41,7 @@ example: [TestActrie](https://github.com/memory-overflow/go-text-algorithm/blob/
 import (
   "testing"
 
-  "github.com/memory-overflow/go-common-library/text"
+  "github.com/memory-overflow/go-text-algorithm"
 )
 
 func TestActrie(t *testing.T) {
@@ -64,7 +64,7 @@ example: [TestLevenshtein](https://github.com/memory-overflow/go-text-algorithm/
 import (
   "testing"
 
-  "github.com/memory-overflow/go-common-library/text"
+  "github.com/memory-overflow/go-text-algorithm"
 )
 
 func TestLevenshtein(t *testing.T) {
@@ -81,7 +81,7 @@ example: [TestTextSim](https://github.com/memory-overflow/go-text-algorithm/blob
 import (
   "testing"
 
-  "github.com/memory-overflow/go-common-library/text"
+  "github.com/memory-overflow/go-text-algorithm"
 )
 
 func TestTextSim(t *testing.T) {
