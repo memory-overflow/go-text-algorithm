@@ -1,4 +1,4 @@
-package text
+package textalg
 
 func min(a, b int) int {
 	if a < b {

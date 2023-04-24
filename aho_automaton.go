@@ -1,4 +1,4 @@
-package text
+package textalg
 
 import "github.com/eapache/queue"
 
