@@ -1,5 +1,6 @@
 - [text 模块](#text-模块)
   - [SliceSame](#slicesame)
+  - [Kmp 文本匹配](#kmp-文本匹配)
   - [Aho-Corasick automaton](#aho-corasick-automaton)
   - [计算文本编辑距离](#计算文本编辑距离)
   - [计算文本相似度](#计算文本相似度)
@@ -26,6 +27,39 @@ func TestSliceSmae(t *testing.T) {
 	t.Logf("is same: %v", same)
   // test can not change order of a
 	t.Log(a)
+}
+```
+
+## Kmp 文本匹配
+通过编辑距离，计算两个文本的相似度。
+
+example: [TestTextSim](https://github.com/memory-overflow/go-text-algorithm/blob/main/text_test.go#L37)
+```go
+import (
+  "testing"
+
+  "github.com/memory-overflow/go-text-algorithm"
+)
+
+func TestKmp(t *testing.T) {
+	k := textalg.BuildKmp("a")
+	indexs := k.Search("aaaaab") // find "a" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("a")
+	indexs = k.Search("aaaaab") // find "aa" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("a")
+	indexs = k.Search("aaaaab") // find "aaa" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("b")
+	indexs = k.Search("aaaaab") // find "aaab" in "aaaaab"
+	t.Log(indexs)
+	k.AppendPatternStr("b")
+	indexs = k.Search("aaaaab") // find "aaabb" in "aaaaab"
+	t.Log(indexs)
+	k.ResetPatternStr("ab")
+	indexs = k.Search("aaaaab") // find "ab" in "aaaaab"
+	t.Log(indexs)
 }
 ```
 
