@@ -12,7 +12,7 @@ text模块提供了一些字符串处理相关的算法能力。
 ## SliceSame
 - SliceSame——判断两个字符串数字是否相同。
 
-example: [TestSliceSmae](https://github.com/memory-overflow/go-common-library/blob/main/text/text_test.go#L29)
+example: [TestSliceSmae](https://github.com/memory-overflow/go-text-algorithm/blob/main/text_test.go#L29)
 ```go
 import (
   "testing"
@@ -36,7 +36,7 @@ ac 自动机是一种多模式串的匹配算法。
 
 比较容易想到的做法是，调用 n 次 `strings.Contains(s, xxx)`。假设 n 个单词平局长度为 k, 这样处理的算法时间复杂度为 O(n * k * m)。而使用 ac 自动机可以加速上述过程，整体算法时间复杂度只需要 O(n*k + m)。
 
-example: [TestActrie](https://github.com/memory-overflow/go-common-library/blob/main/text/text_test.go#L9)
+example: [TestActrie](https://github.com/memory-overflow/go-text-algorithm/blob/main/text_test.go#L9)
 ```go
 import (
   "testing"
@@ -59,7 +59,7 @@ func TestActrie(t *testing.T) {
 ## 计算文本编辑距离
 编辑距离(Edit Distance)：是一个度量两个字符序列之间差异的字符串度量标准，两个单词之间的编辑距离是将一个单词转换为另一个单词所需的单字符编辑（插入、删除或替换）的最小数量。一般来说，编辑距离越小，两个串的相似度越大。
 
-example: [TestLevenshtein](https://github.com/memory-overflow/go-common-library/blob/main/text/text_test.go#L24)
+example: [TestLevenshtein](https://github.com/memory-overflow/go-text-algorithm/blob/main/text_test.go#L24)
 ```go
 import (
   "testing"
@@ -76,7 +76,7 @@ func TestLevenshtein(t *testing.T) {
 ## 计算文本相似度
 通过编辑距离，计算两个文本的相似度。
 
-example: [TestTextSim](https://github.com/memory-overflow/go-common-library/blob/main/text/text_test.go#L17)
+example: [TestTextSim](https://github.com/memory-overflow/go-text-algorithm/blob/main/text_test.go#L17)
 ```go
 import (
   "testing"
