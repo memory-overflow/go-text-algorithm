@@ -5,6 +5,9 @@
   - [计算文本编辑距离](#计算文本编辑距离)
   - [计算文本相似度](#计算文本相似度)
 
+```
+go get github.com/memory-overflow/go-text-algorithm
+```
 # text 模块
 golang 里面的 strings 库已经有了很多丰富的字符串处理功能，但是都是偏向于基础处理。
 
